@@ -1,0 +1,11 @@
+{
+  "name": "trento2jan12-esame",
+  "version": "1.0.0",
+  "description": "Esame di Ingegneria del software 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
