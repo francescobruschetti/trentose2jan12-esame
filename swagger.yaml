@@ -73,6 +73,32 @@ paths:
           description: unexpected error
           schema:
             $ref: '#/definitions/Error'
+            
+    put:
+      description: Updates an existing astronaut
+      operationId: updateAstronaut
+      parameters:
+        - name: id
+          in: path
+          description: ID of astronaut to edit or create
+          required: true
+          type: string
+          
+        - name: astronaut
+          in: body
+          description: astronaut
+          required: true
+          schema:
+            $ref: '#/definitions/Astronaut'
+      responses:
+        202:
+          description: astronaut update response
+          schema:
+            $ref: '#/definitions/Astronaut'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
     
 definitions: # defined the structure of how the server answer to this actions
   Astronaut:
