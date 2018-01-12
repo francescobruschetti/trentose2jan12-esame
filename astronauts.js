@@ -11,17 +11,15 @@ astronauts.get('/client', function (req, res) {
 
 })
 
-astronauts.get('/', function (req, res) {
-    res.json(astronautsDetails)
-})
+astronauts.get('/:astrinautsID', function (req, res) {
 
-astronauts.post('/', function (req, res) {
-	
-	console.log(req.body.firstName)
-    const newAstronaut = req.body
-    newAstronaut.ID = uuid()
-    astronautsDetails.push(newAstronaut)
-    res.json(newAstronaut)
+    const astrinautsID = req.params.astrinautsID
+    const i = astronautsDetails.findIndex(item => {return item.astrinautsID === astrinautsID})
+    if (i==-1) res.sendStatus(404)
+    else {
+        res.status=200
+        res.json(astronautsDetails[i])
+    }
 })
 
 module.exports = astronauts
