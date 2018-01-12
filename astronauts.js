@@ -11,5 +11,16 @@ astronauts.get('/client', function (req, res) {
 
 })
 
+astronauts.get('/', function (req, res) {
+    res.json(astronautsDetails)
+})
+
+astronauts.post('/', function (req, res) {
+	
+    const newAstronaut = req.body
+    newAstronaut.astronautID = uuid()
+    astronautsDetails.push(newAstronaut)
+    res.json(newAstronaut)
+})
 
 module.exports = astronauts
