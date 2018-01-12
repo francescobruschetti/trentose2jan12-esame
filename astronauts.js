@@ -6,10 +6,7 @@ var uuid = require('uuid-v4');
 
 const astronautsDetails = []
 
-astronauts.get('/client', function (req, res) {
-    res.sendfile("client.html");
 
-})
 
 astronauts.get('/', function (req, res) {
     res.json(astronautsDetails)

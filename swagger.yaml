@@ -89,12 +89,12 @@ paths:
           description: astronaut
           required: true
           schema:
-            $ref: '#/definitions/Astronaut'
+            $ref: '#/definitions/Astronauts'
       responses:
         202:
           description: astronaut update response
           schema:
-            $ref: '#/definitions/Astronaut'
+            $ref: '#/definitions/Astronauts'
         default:
           description: unexpected error
           schema:
